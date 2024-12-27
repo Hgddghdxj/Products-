@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="styles.css">
+<style type="text/css" id="dcoder_stylesheet">/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#login, #products, #contact {
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+.product {
+    display: inline-block;
+    width: 45%;
+    margin: 10px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+.product button {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: darkgreen;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product {
+        width: 100%;
+    }
+}</style></head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            <h1>Your Store</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Login Section -->
+    <section id="login">
+        <h2>Login</h2>
+        <form action="#" method="POST" class="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="product">
+            <img src="product1.jpg" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Price: $299</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="product2.jpg" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Price: $399</p>
+            <button>Add to Cart</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="#" method="POST" class="contact-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Your Store. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+<script type="text/javascript" id="dcoder_script">// script.js
+
+// Simple login functionality (In real projects, use authentication APIs)
+document.querySelector(".login-form").addEventListener("submit", function(event) {
+    event.preventDefault();  // Prevent form from submitting
+
+    const username = document.querySelector("#username").value;
+    const password = document.querySelector("#password").value;
+
+    // For demo purposes: Check if username and password match a dummy value
+    if(username === "admin" && password === "password123") {
+        alert("Login successful!");
+        window.location.href = "#products";  // Redirect to products page
+    } else {
+        alert("Invalid username or password");
+    }
+});
+
+// Contact form submission (In real projects, send this data to server)
+document.querySelector(".contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();  // Prevent form from submitting
+
+    const name = document.querySelector("#name").value;
+    const email = document.querySelector("#email").value;
+    const message = document.querySelector("#message").value;
+
+    alert(`Thank you, ${name}! Your message has been sent.`);
+    // Reset the form
+    this.reset();
+});</script></body></html>
